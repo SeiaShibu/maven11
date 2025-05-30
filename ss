@@ -8,6 +8,7 @@ echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+sudo apt-get remove --purge jenkins -y
 
 sudo ansible-playbook -i hosts.ini setup.yml
 ls -l /var/lib/jenkins/deployment/
